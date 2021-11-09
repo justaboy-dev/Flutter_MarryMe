@@ -24,7 +24,7 @@ class _MenuItemState extends State<MenuItem> {
     if (widget.isActive) {
       return kButtonColor;
     } else if (!widget.isActive && isHover) {
-      return kButtonColor.withOpacity(0.5);
+      return kButtonColor.withOpacity(0.3);
     }
     return Colors.transparent;
   }
@@ -51,7 +51,7 @@ class _MenuItemState extends State<MenuItem> {
             widget.tittle.toUpperCase(),
             style: TextStyle(
                 color: kTextColor.withOpacity(0.5),
-                fontSize: 20,
+                fontSize: 25,
                 fontFamily: "Neucha",
                 fontWeight:
                     widget.isActive ? FontWeight.bold : FontWeight.normal),

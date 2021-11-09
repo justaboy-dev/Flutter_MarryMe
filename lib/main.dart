@@ -18,6 +18,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primaryColor: kprimaryColor,
         ),
-        home: const HomePage());
+        home: HomePage());
   }
 }

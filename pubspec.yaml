@@ -27,6 +27,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animated_text_kit: ^4.2.1
+  carousel_slider: ^4.0.0
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
@@ -76,6 +78,10 @@ flutter:
     - family: Neucha
       fonts:
         - asset: font/Neucha-Regular.ttf
+          weight: 700
+    - family: Righteous
+      fonts:
+        - asset: font/Righteous-Regular.ttf
           weight: 700
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
