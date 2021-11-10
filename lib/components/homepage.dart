@@ -26,7 +26,8 @@ class HomePage extends StatelessWidget {
             )
           : null,
       body: Container(
-        margin: const EdgeInsets.all(15),
+        margin: EdgeInsets.symmetric(
+            horizontal: Responsive.isDesktop(context) ? 40 : 0),
         width: double.infinity,
         height: MediaQuery.of(context).size.height,
         child: ScrollConfiguration(
@@ -48,17 +49,44 @@ class HomePage extends StatelessWidget {
               ),
               SliverFillRemaining(
                 child: SafeArea(
-                  child: PageView(
-                    onPageChanged: (index) =>
-                        appBarController.setMenuIndex(index),
-                    scrollDirection: Axis.vertical,
-                    controller: pageController,
-                    children: <Widget>[
-                      const Body(),
-                      const Gallery(),
-                      Container(
-                        height: 300,
-                        color: Colors.blue,
+                  child: Stack(
+                    children: [
+                      PageView(
+                        onPageChanged: (index) =>
+                            appBarController.setMenuIndex(index),
+                        scrollDirection: Axis.vertical,
+                        controller: pageController,
+                        children: <Widget>[
+                          Body(
+                            controller: pageController,
+                          ),
+                          const Gallery(),
+                          Container(
+                            height: 300,
+                            color: Colors.blue,
+                          ),
+                        ],
+                      ),
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: InkWell(
+                          onTap: () {
+                            appBarController.jumpToPage(0, pageController);
+                          },
+                          child: Container(
+                              margin: const EdgeInsets.all(40),
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Colors.white),
+                                  color: Colors.black26,
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(50))),
+                              child: const Icon(
+                                Icons.arrow_upward,
+                                color: Colors.white,
+                              )),
+                        ),
                       ),
                     ],
                   ),

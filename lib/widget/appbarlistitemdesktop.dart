@@ -22,7 +22,7 @@ class AppBarListItemDestop extends StatelessWidget {
         Row(crossAxisAlignment: CrossAxisAlignment.center, children: <Widget>[
           Image.asset(
             "asset/icon/logo.png",
-            width: 100,
+            width: 120,
             alignment: Alignment.topCenter,
           ),
           const SizedBox(
@@ -49,7 +49,7 @@ class AppBarListItemDestop extends StatelessWidget {
           ),
           DefaultButton(
             text: "Get Started",
-            onPress: () {},
+            onPress: () => onItemPress(1),
           )
         ]));
   }

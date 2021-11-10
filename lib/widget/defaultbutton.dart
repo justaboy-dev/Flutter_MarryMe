@@ -19,14 +19,14 @@ class DefaultButton extends StatelessWidget {
           style: TextButton.styleFrom(
               backgroundColor: kButtonColor,
               padding:
-                  const EdgeInsets.symmetric(horizontal: 20, vertical: 20)),
+                  const EdgeInsets.symmetric(horizontal: 15, vertical: 20)),
           onPressed: onPress,
           child: Text(
             text.toUpperCase(),
             style: const TextStyle(
                 fontFamily: "Neucha",
                 color: kTextColor,
-                fontSize: 15,
+                fontSize: 20,
                 fontWeight: FontWeight.bold),
           )),
     );

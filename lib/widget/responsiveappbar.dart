@@ -12,7 +12,7 @@ class ResponsiveAppBar extends StatelessWidget {
         children: <Widget>[
           Image.asset(
             "asset/icon/logo.png",
-            width: 70,
+            width: 90,
             alignment: Alignment.topCenter,
           ),
           const SizedBox(

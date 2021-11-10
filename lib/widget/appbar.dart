@@ -14,13 +14,16 @@ class MyAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
-      decoration: BoxDecoration(color: Colors.white, boxShadow: [
-        BoxShadow(
-            blurRadius: 30,
-            offset: const Offset(0, -2),
-            color: Colors.black.withOpacity(0.16))
-      ]),
+      padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
+      decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+                blurRadius: 30,
+                offset: const Offset(0, -2),
+                color: Colors.black.withOpacity(0.16))
+          ]),
       child: Responsive(
           primary: AppBarListItemDestop(
             controller: pageController,

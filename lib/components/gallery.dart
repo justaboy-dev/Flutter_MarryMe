@@ -23,58 +23,61 @@ class Gallery extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
-              flex: 2,
+              flex: Responsive.isMobile(context) ? 2 : 3,
               child: Container(
-                margin: const EdgeInsets.all(25),
-                child: Column(
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.symmetric(vertical: 10.0),
-                      child: Text(
-                        "GALERRY",
+                margin: const EdgeInsets.symmetric(horizontal: 25),
+                child: SafeArea(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                            vertical: Responsive.isDesktop(context) ? 40 : 10),
+                        child: const Text(
+                          "GALERRY",
+                          style: TextStyle(
+                              color: kButtonColor,
+                              fontFamily: "Neucha",
+                              fontSize: 55,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      DefaultTextStyle(
                         style: TextStyle(
-                            color: kButtonColor,
-                            fontFamily: "Neucha",
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold),
+                            color: kTextColor,
+                            fontFamily: "DancingScript",
+                            fontSize: Responsive.isDesktop(context) ? 32 : 22,
+                            fontWeight: FontWeight.normal),
+                        child: AnimatedTextKit(
+                          repeatForever: true,
+                          animatedTexts: [
+                            TypewriterAnimatedText(
+                                "To the world you may be one person, but to one person you may be the world",
+                                textAlign: TextAlign.justify,
+                                speed: const Duration(milliseconds: 100)),
+                            TypewriterAnimatedText(
+                                "A man falls in love through his eyes, a woman through her ears.",
+                                textAlign: TextAlign.justify,
+                                speed: const Duration(milliseconds: 100)),
+                            TypewriterAnimatedText(
+                                "Don’t stop giving love even if you don’t receive it. Smile and have patience",
+                                textAlign: TextAlign.justify,
+                                speed: const Duration(milliseconds: 100)),
+                            TypewriterAnimatedText(
+                                "A geat lover is not one who lover many, but one who loves one woman for life.",
+                                textAlign: TextAlign.justify,
+                                speed: const Duration(milliseconds: 100)),
+                          ],
+                        ),
                       ),
-                    ),
-                    DefaultTextStyle(
-                      style: const TextStyle(
-                          color: kTextColor,
-                          fontFamily: "DancingScript",
-                          fontSize: 20,
-                          fontWeight: FontWeight.normal),
-                      child: AnimatedTextKit(
-                        repeatForever: true,
-                        animatedTexts: [
-                          TypewriterAnimatedText(
-                              "To the world you may be one person, but to one person you may be the world",
-                              textAlign: TextAlign.justify,
-                              speed: const Duration(milliseconds: 100)),
-                          TypewriterAnimatedText(
-                              "A man falls in love through his eyes, a woman through her ears.",
-                              textAlign: TextAlign.justify,
-                              speed: const Duration(milliseconds: 100)),
-                          TypewriterAnimatedText(
-                              "Don’t stop giving love even if you don’t receive it. Smile and have patience",
-                              textAlign: TextAlign.justify,
-                              speed: const Duration(milliseconds: 100)),
-                          TypewriterAnimatedText(
-                              "A geat lover is not one who lover many, but one who loves one woman for life.",
-                              textAlign: TextAlign.justify,
-                              speed: const Duration(milliseconds: 100)),
-                        ],
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
             Expanded(
-              flex: 4,
+              flex: Responsive.isMobile(context) ? 4 : 5,
               child: Align(
-                alignment: Alignment.topCenter,
+                alignment: Alignment.center,
                 child: Container(
                   margin: const EdgeInsets.all(5),
                   width: Responsive.isDesktop(context)
