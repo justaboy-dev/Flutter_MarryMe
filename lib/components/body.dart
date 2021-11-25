@@ -10,7 +10,9 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Container(
+      child: AnimatedContainer(
+        duration: const Duration(milliseconds: 1500),
+        curve: Curves.linearToEaseOut,
         width: double.infinity,
         //height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
@@ -36,7 +38,7 @@ class Body extends StatelessWidget {
             Container(
               constraints: BoxConstraints(
                   maxHeight: MediaQuery.of(context).size.height - 170,
-                  maxWidth: MediaQuery.of(context).size.width / 2),
+                  maxWidth: MediaQuery.of(context).size.width),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,

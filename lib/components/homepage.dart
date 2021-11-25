@@ -6,6 +6,7 @@ import 'package:marryme/widget/appbar.dart';
 import 'package:marryme/widget/responsive.dart';
 import 'package:marryme/widget/responsivemenulist.dart';
 
+import 'aboutus.dart';
 import 'gallery.dart';
 
 class HomePage extends StatelessWidget {
@@ -61,31 +62,32 @@ class HomePage extends StatelessWidget {
                             controller: pageController,
                           ),
                           const Gallery(),
-                          Container(
-                            height: 300,
-                            color: Colors.blue,
-                          ),
+                          const AboutUs(),
                         ],
                       ),
                       Align(
                         alignment: Alignment.bottomRight,
-                        child: InkWell(
-                          onTap: () {
-                            appBarController.jumpToPage(0, pageController);
-                          },
-                          child: Container(
-                              margin: const EdgeInsets.all(40),
-                              width: 50,
-                              height: 50,
-                              decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.white),
-                                  color: Colors.black26,
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(50))),
-                              child: const Icon(
-                                Icons.arrow_upward,
-                                color: Colors.white,
-                              )),
+                        child: Container(
+                          margin: const EdgeInsets.all(40),
+                          width: 50,
+                          height: 50,
+                          child: InkWell(
+                            onTap: () {
+                              appBarController.jumpToPage(0, pageController);
+                            },
+                            child: AnimatedContainer(
+                                duration: const Duration(seconds: 1),
+                                curve: Curves.fastOutSlowIn,
+                                decoration: BoxDecoration(
+                                    border: Border.all(color: Colors.white),
+                                    color: Colors.black26,
+                                    borderRadius: const BorderRadius.all(
+                                        Radius.circular(50))),
+                                child: const Icon(
+                                  Icons.arrow_upward,
+                                  color: Colors.white,
+                                )),
+                          ),
                         ),
                       ),
                     ],

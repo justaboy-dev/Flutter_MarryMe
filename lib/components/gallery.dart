@@ -77,7 +77,9 @@ class Gallery extends StatelessWidget {
             Expanded(
               flex: Responsive.isMobile(context) ? 4 : 5,
               child: Align(
-                alignment: Alignment.center,
+                alignment: Responsive.isMobile(context)
+                    ? Alignment.topCenter
+                    : Alignment.center,
                 child: Container(
                   margin: const EdgeInsets.all(5),
                   width: Responsive.isDesktop(context)

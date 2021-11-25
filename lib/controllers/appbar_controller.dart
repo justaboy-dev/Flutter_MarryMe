@@ -11,7 +11,7 @@ class AppBarController extends GetxController {
 
   void jumpToPage(int index, PageController controller) {
     controller.animateToPage(index,
-        duration: const Duration(milliseconds: 800),
+        duration: const Duration(milliseconds: 1000),
         curve: Curves.easeInOutQuint);
     update();
   }
